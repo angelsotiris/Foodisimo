@@ -1,8 +1,11 @@
 Πλατφόρμα διαδικτυακής παραγγελιοληψίας φαγητού βασισμένη στο efood.
-Ανάπτυξη κώδικα με .ΝΕΤ
+Ανάπτυξη κώδικα με .ΝΕΤ υλοποιώντας το MVC πρότυπο.
+
+Front-End: React
+Back-End: Redux
+IDE: Visual Studio 19
 
 Μέλη:
-
 Αγγελούσης Σωτήριος - Project Manager - Core Developer
 Βαγγέλης Γιατσίδης - Front-end Developer
 Ερωτόκριτος Αβραμίδης - Back-end Developer
