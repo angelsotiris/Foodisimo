@@ -1,0 +1,53 @@
+.navbar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    width: 100vw;
+    margin: auto;
+    padding: 30px 20%;
+    height: 96px;
+}
+.navbar-container{
+    padding-top:5px;
+}
+.navbar-container-logo{
+    float: left;
+}
+.logo-image {
+    background: url(../images/logo.png);
+    background-size:100px 28px;
+    height: 28px;
+    width: 100px;
+}
+.navbar-container-login{
+    float: right;
+}
+.navbar-container-login button{
+    padding: .29rem 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    font-size: .875rem;
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #fff;
+    transition: background 0.8s ease 0s!important;
+}
+.navbar-container-login button:hover{
+    color: #212529;
+    background-color: #fff;
+    border-color: #fff;
+}
+@media (max-width: 990px){
+    .navbar{
+        padding: 30px 10%;
+    }
+    .logo-image {
+        background: url(../images/logo-mobile.png);
+        background-size:100px 28px;
+        height: 28px;
+        width: 100px;
+    }
+}
