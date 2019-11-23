@@ -1,18 +1,16 @@
 .login-register{
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1050;
-    display: none;
     outline: 0;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .login-register-container{
-    max-width: 400px;
+    max-width: 350px;
     margin: 1.75rem auto;
     position: relative;
     width: auto;
@@ -102,11 +100,11 @@
     text-transform: none;
     font-size: .8125rem;
 }
-.login-register-header-container ul{
+.login-register-header ul{
     padding-top: .75rem!important;
+    padding-bottom: .75rem!important;
     width: 100%!important;
     justify-content: center!important;
-    display: flex!important;
     border: 0!important;
     flex-wrap: wrap;
     padding-left: 0;
@@ -114,11 +112,23 @@
     list-style: none;
     margin-top: 0;
 }
-.login-register-header-container ul li{
+.login-register-header ul li{
     text-align: center!important;
     width: 50%!important;
+    padding-bottom: 15px;
 }
-.login-register-header-container ul li span{
+.login-register-header-closed{
+    text-align: center!important;
+    width: 50%!important;
+    padding-bottom: 15px;
+}
+.login-register-header-opened{
+    padding-bottom: 15px;
+    text-align: center!important;
+    width: 50%!important;
+    border-bottom: 2px solid #333;
+}
+.login-register-header ul li a{
     padding-bottom: .75rem!important;
     padding-top: .75rem!important;
     font-size: 1.00625rem;
@@ -127,11 +137,12 @@
     color: #9b9b9b;
     font-weight: 400;
     margin-bottom: 0;
+    text-decoration: none;
+   
 }
-.login-register-header-container ul li span:active{
-    font-weight: 700;
-    color: #333;
-    border-bottom: 2px solid #333;
+.login-register-header-a-opened{
+    font-weight: 700 !important;
+    color: #333 !important;
 }
 .login-register-main{
     padding: 1.5rem 2.5rem;
@@ -141,6 +152,9 @@
     background-color: #fff!important;
 }
 .login-email{
+    margin-bottom: 1.5rem;
+}
+.login-email div{
     margin-bottom: 1.5rem;
 }
 .login-email input{
@@ -223,4 +237,25 @@
     overflow: visible;
     margin: 0;
     font-family: inherit;
+}
+.login-password small{
+    padding-top:10px;
+    color: #9b9b9b!important;
+    display: block;
+    margin-top: .25rem;
+    font-size: 86%;
+    font-weight: 400;
+}
+.forgot-p{
+    text-align: center!important;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #333;
+}
+.login-error{
+    font-size:14px;
+    color:red;
 }

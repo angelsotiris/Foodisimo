@@ -133,4 +133,8 @@
         width: 165px;
         height: 130px;
     }
+    .stores-container{
+        padding-right: 6px;
+        padding-left: 11px;
+    }
 }

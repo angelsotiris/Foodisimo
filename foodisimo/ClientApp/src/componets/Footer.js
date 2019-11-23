@@ -21,40 +21,34 @@ export default class Footer extends Component {
                                 <p>Πείνασες; Είσαι στο γραφείο και θες καφέ; Είναι Σαββατοκύριακο και δεν θες να σηκωθείς από το κρεβάτι; Γι' αυτό υπάρχει το efood. Βρες ό,τι τραβάει η όρεξή σου και παράγγειλε επιλέγοντας ανάμεσα σε  6500 καταστήματα και 60 πόλεις! Τι άλλο θες; efood και έφαγες!</p>
                             </div>
                             <div className="footer-links">
-                                <ul class="list-unstyled mb-0 footer-links-list">
-                                    <li><Link to="">Ποιοί είμαστε</Link></li>
-                                    <li><Link to="">Πώς λειτουργεί</Link></li>
-                                    <li><Link to="">FAQs</Link></li>
-                                    <li><Link to="">Blog</Link></li>
-                                    <li><Link to="">Επικοινωνία</Link></li>
-                                    <li><Link to="">Έχεις κατάστημα;</Link></li>
-                                    <li><Link to="">Γίνε efooder</Link></li>
-                                    <li><Link to="">Τρόποι Πληρωμής</Link></li>
-                                    <li><Link to="">Όροι χρήσης</Link></li>
-                                    <li><Link to="">Αλλεργιογόνα</Link></li>
-                                    <li><Link to="">Πολιτική απορρήτου</Link></li>
-                                    <li><Link to="">Πολιτική προστασίας</Link></li>
-                                    <li><Link to="">Πολιτική cookies</Link></li>
-                                    <li><Link to="">Πολιτική αξιολόγησης</Link></li>
-                                    <li><Link to="">Εστιατόρια</Link></li>
+                                <ul className="list-unstyled mb-0 footer-links-list">
+                                    <li><Link to="/info/who">Ποιοί είμαστε</Link></li>
+                                    <li><Link to="/info/info">Πώς λειτουργεί</Link></li>
+                                    <li><Link to="/info/faqs">FAQs</Link></li>
+                                    <li><Link to="/info/contact">Επικοινωνία</Link></li>
+                                    <li><Link to="/info/restaurant">Έχεις κατάστημα;</Link></li>
+                                    <li><Link to="/info/tos">Όροι χρήσης</Link></li>
+                                    <li><Link to="/info/allergens">Αλλεργιογόνα</Link></li>
+                                    <li><Link to="/info/privacy">Πολιτική απορρήτου</Link></li>
+                                    <li><Link to="/info/copyright">Πολιτική προστασίας</Link></li>
                                 </ul>
                             </div>
                             <div className="footer-social">
                                 <ul>
                                     <li>
-                                        <Link to="/"><FaFacebookF/></Link>
+                                        <a href="https://www.facebook.com/"><FaFacebookF/></a>
                                     </li>
                                     <li>
-                                        <Link to="/"><FaTwitter/></Link>
+                                        <a href="https://twitter.com/"><FaTwitter/></a>
                                     </li>
                                     <li>
-                                        <Link to="/"><FaInstagram/></Link>
+                                        <a href="https://www.instagram.com/"><FaInstagram/></a>
                                     </li>
                                     <li>
-                                        <Link to="/"><FaYoutube/></Link>
+                                        <a href="https://www.youtube.com/"><FaYoutube/></a>
                                     </li>
                                     <li>
-                                        <Link to="/"><FaLinkedin/></Link>
+                                        <a href="https://www.linkedin.com/"><FaLinkedin/></a>
                                     </li>
                                 </ul>
                             </div>

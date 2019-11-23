@@ -124,12 +124,16 @@
         font-size: 16px;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 560px){
     .offers-info div span{
         padding-right:5vw;
     }
     .slicker-div-image img{
         width: 165px;
         height: 130px;
+    }
+    .offers-container{
+        padding-right: 6px;
+        padding-left: 11px;
     }
 }

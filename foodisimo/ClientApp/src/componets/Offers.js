@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 
 export default class Offers extends Component {
     render() {
-        console.log(window.innerWidth);
         let settings=""
         if(window.innerWidth >990){
             settings = {
