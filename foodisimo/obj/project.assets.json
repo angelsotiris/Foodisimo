@@ -11881,19 +11881,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Giats\\.nuget\\packages\\": {}
+    "C:\\Users\\Sotiris\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Giats\\Desktop\\foodisimo\\foodisimo.csproj",
+      "projectUniqueName": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
       "projectName": "foodisimo",
-      "projectPath": "C:\\Users\\Giats\\Desktop\\foodisimo\\foodisimo.csproj",
-      "packagesPath": "C:\\Users\\Giats\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Giats\\Desktop\\foodisimo\\obj\\",
+      "projectPath": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
+      "packagesPath": "C:\\Users\\Sotiris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Giats\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sotiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
