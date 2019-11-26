@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,22 +10,12 @@ using System.Windows.Forms;
 
 namespace Foodisimo_Shop
 {
-    public partial class Form1 : Form
+    public partial class UserControl1 : UserControl
     {
-        public Form1()
+        public UserControl1()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        
     }
 }
