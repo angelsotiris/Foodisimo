@@ -1,0 +1,329 @@
+.confirmorder{
+    padding-bottom: 2.5rem!important;
+    border-top: 1px solid #dee2e6!important;
+    background-color: #f7f7f7!important;
+}
+.confirmorder-top{
+    max-width: 720px;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.confirmorder-top-header{
+    padding-bottom: 1.5rem!important;
+    padding-top: 1.5rem!important;
+    justify-content: space-between!important;
+    display: flex!important;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+}
+.confirmorder-top-header-col{
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.confirmorder-top-header-col h3{
+    color: #666;
+    font-weight: 400!important;
+    text-align: center!important;
+    font-size: 1.00625rem;
+    line-height: 1.2;
+    margin-bottom: .25rem;
+    font-family: inherit;
+    margin-top: 0;
+}
+.confirmorder-top-header h1{  
+    font-size: 1.625rem;
+    font-weight: 700!important;
+    text-align: center!important;
+    margin-bottom: 1.5rem!important;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+    line-height: 1.2;
+    margin-top: 0;
+}
+.confirmorder-bottom{
+    max-width: 720px;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.confirmorder-bottom-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+}
+.confirmorder-bottom-container-col{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.confirmorder-bottom-container-col-shadow{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    padding: 2rem!important;
+    margin-bottom: 1rem!important;
+    border-radius: .25rem!important;
+    background-color: #fff!important;
+}
+.confirmorder-bottom-container-col-shadow h2{
+    margin-bottom: 1.5rem!important;
+    font-size: 1.25125rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    margin-top: 0;
+}
+.confirmorder-bottom-container-col-address{
+    margin-bottom: 2.5rem!important;
+    display: flex!important;
+}
+.confirmorder-bottom-container-col-address > div{
+    background-color: #F7F7F7;
+    width: 40px;
+    height: 40px;
+    text-align: center!important;
+    padding: .5rem!important;
+    margin-right: 1rem!important;
+    border-radius: 50%!important;
+    flex: 0 0 auto;
+    max-width: none;
+    min-height: 1px;
+    position: relative;
+}
+.confirmorder-bottom-container-col-address strong{
+    margin-right:0.5rem;   
+}
+.confirmorder-bottom-container-col-address p{
+    margin-top:0.5rem;   
+}
+.confirmorder-bottom-container-col-formgroup{
+    margin-bottom: 1.5rem;
+}
+.confirmorder-bottom-container-col-formgroup label{
+    font-size: .75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.confirmorder-bottom-container-col-formgroup input{
+    color: #333;
+    display: block;
+    width: 100%;
+    height: calc(2.40875rem + 2px);
+    padding: .57rem 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dfdfdf;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.confirmorder-bottom-container-col-formgroup textarea{
+    color: #333;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: .57rem 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dfdfdf;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.confirmorder-bottom-container-col-row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -16px;
+    margin-left: -16px;
+}
+.confirmorder-bottom-container-col-row-left{
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.confirmorder-bottom-container-col-row-left >div{
+    margin-bottom: 1.5rem;
+}
+.confirmorder-bottom-container-col-row-left >div label{
+    font-size: .75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.confirmorder-bottom-container-col-row-left >div input{
+    color: #333;
+    display: block;
+    width: 100%;
+    height: calc(2.40875rem + 2px);
+    padding: .57rem 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dfdfdf;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.confirmorder-bottom-container-col-row-right{
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.confirmorder-bottom-container-col-row-right >div{
+    margin-bottom: 1.5rem;
+}
+.confirmorder-bottom-container-col-row-right >div label{
+    font-size: .75rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+.confirmorder-bottom-container-col-row-right >div input{
+    color: #333;
+    display: block;
+    width: 100%;
+    height: calc(2.40875rem + 2px);
+    padding: .57rem 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dfdfdf;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.confirmorder-bottom-container-col2{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.confirmorder-bottom-container-col2-shadow{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    border-radius: .25rem!important;
+    background-color: #fff!important;
+}
+.confirmorder-bottom-container-col2-header{
+    padding: 2rem;
+}
+.confirmorder-bottom-container-col2-header span{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-right: .25rem;
+}
+.confirmorder-bottom-container-col2-header span h3{
+    display: inline;
+    font-weight: 700;
+    font-size: 1.25rem;
+    font-family: inherit;
+    line-height: 1.2;
+    color: inherit;
+}
+.confirmorder-bottom-container-col2-header-container{
+    margin-top: 1.5rem;
+}
+.confirmorder-bottom-container-col2-header-container >div{
+    margin-top: .75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.confirmorder-bottom-container-col2-header-container button{
+    cursor: pointer;
+    font-size: .875rem;
+    padding: .782rem 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    display: block;
+    color: #212529;
+    background-color: #ffc200;
+    border-color: #ffc200;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    border: 1px solid transparent;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin: 0;
+    font-family: inherit;
+    text-transform: none;
+    overflow: visible;
+}
+.confirmorder-bottom-container-col2-item{
+    position: relative;
+    padding: 1rem 2rem;
+    border-color: #ebebeb;
+    border-top-width: 0;
+    border: solid #f7f7f7;
+    border-width: 1px 0 0;
+    font-size: .75rem;
+}
+.confirmorder-bottom-container-col2-item-info{
+    padding-left: 1.75rem;
+    width: calc(100% - 2.75rem);
+}
+.confirmorder-bottom-container-col2-item-info strong{
+    display: inline;
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: 176px;
+}
+.confirmorder-bottom-container-col2-item-container{
+    position: absolute;
+    top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    padding: 0 2rem;
+}
+.confirmorder-bottom-container-col2-item-container strong{
+    padding: 0;
+    font-size: .75rem;
+    font-weight: lighter;
+}
