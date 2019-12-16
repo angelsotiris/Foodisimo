@@ -1,0 +1,10 @@
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\bin\Debug\Foodishop.exe.config
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\bin\Debug\Foodishop.exe
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\bin\Debug\Foodishop.pdb
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.csprojAssemblyReference.cache
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.Properties.Resources.resources
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.csproj.GenerateResource.cache
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.exe
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.pdb
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.LoadingForm.resources
+C:\Users\Sotiris\Desktop\vs\Foodishop\Foodishop\obj\Debug\Foodishop.MainForm.resources
