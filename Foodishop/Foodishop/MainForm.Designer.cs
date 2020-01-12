@@ -33,9 +33,9 @@
             this.closeBtn = new System.Windows.Forms.PictureBox();
             this.backgroundPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dashboard2 = new Foodishop.Dashboard();
             this.products1 = new Foodishop.Products();
             this.opening1 = new Foodishop.Opening();
-            this.dashboard1 = new Foodishop.Dashboard();
             this.orders1 = new Foodishop.Orders();
             this.label1 = new System.Windows.Forms.Label();
             this.sidebar = new System.Windows.Forms.Panel();
@@ -43,13 +43,14 @@
             this.shopName = new System.Windows.Forms.Label();
             this.shopIcon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelActive = new System.Windows.Forms.Panel();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.bottomLogo = new System.Windows.Forms.PictureBox();
-            this.panelActive = new System.Windows.Forms.Panel();
+            this.statistics1 = new Foodishop.Statistics();
             this.topBar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
@@ -109,9 +110,10 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.statistics1);
+            this.panel4.Controls.Add(this.dashboard2);
             this.panel4.Controls.Add(this.products1);
             this.panel4.Controls.Add(this.opening1);
-            this.panel4.Controls.Add(this.dashboard1);
             this.panel4.Controls.Add(this.orders1);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -119,6 +121,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(919, 740);
             this.panel4.TabIndex = 1;
+            // 
+            // dashboard2
+            // 
+            this.dashboard2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard2.Location = new System.Drawing.Point(0, 0);
+            this.dashboard2.Name = "dashboard2";
+            this.dashboard2.Size = new System.Drawing.Size(919, 740);
+            this.dashboard2.TabIndex = 5;
+            this.dashboard2.Load += new System.EventHandler(this.dashboard2_Load);
             // 
             // products1
             // 
@@ -137,15 +148,6 @@
             this.opening1.Name = "opening1";
             this.opening1.Size = new System.Drawing.Size(919, 740);
             this.opening1.TabIndex = 3;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.AutoSize = true;
-            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(919, 740);
-            this.dashboard1.TabIndex = 2;
             // 
             // orders1
             // 
@@ -189,14 +191,14 @@
             // 
             // shopName
             // 
-            this.shopName.AutoSize = true;
             this.shopName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shopName.ForeColor = System.Drawing.Color.White;
-            this.shopName.Location = new System.Drawing.Point(129, 173);
+            this.shopName.Location = new System.Drawing.Point(12, 173);
             this.shopName.Name = "shopName";
-            this.shopName.Size = new System.Drawing.Size(64, 25);
+            this.shopName.Size = new System.Drawing.Size(285, 25);
             this.shopName.TabIndex = 1;
             this.shopName.Text = "label1";
+            this.shopName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shopIcon
             // 
@@ -220,6 +222,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 296);
             this.panel1.TabIndex = 6;
+            // 
+            // panelActive
+            // 
+            this.panelActive.BackColor = System.Drawing.Color.Red;
+            this.panelActive.Location = new System.Drawing.Point(0, 3);
+            this.panelActive.Name = "panelActive";
+            this.panelActive.Size = new System.Drawing.Size(8, 52);
+            this.panelActive.TabIndex = 5;
             // 
             // btnOpen
             // 
@@ -318,13 +328,13 @@
             this.bottomLogo.TabStop = false;
             this.bottomLogo.Click += new System.EventHandler(this.bottomLogo_Click);
             // 
-            // panelActive
+            // statistics1
             // 
-            this.panelActive.BackColor = System.Drawing.Color.Red;
-            this.panelActive.Location = new System.Drawing.Point(0, 3);
-            this.panelActive.Name = "panelActive";
-            this.panelActive.Size = new System.Drawing.Size(8, 52);
-            this.panelActive.TabIndex = 5;
+            this.statistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statistics1.Location = new System.Drawing.Point(0, 0);
+            this.statistics1.Name = "statistics1";
+            this.statistics1.Size = new System.Drawing.Size(919, 740);
+            this.statistics1.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -345,7 +355,6 @@
             this.panel4.PerformLayout();
             this.sidebar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shopIcon)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bottomLogo)).EndInit();
@@ -377,5 +386,7 @@
         private Opening opening1;
         private Dashboard dashboard1;
         private System.Windows.Forms.Panel panelActive;
+        private Dashboard dashboard2;
+        private Statistics statistics1;
     }
 }

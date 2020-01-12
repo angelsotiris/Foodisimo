@@ -13,7 +13,7 @@ namespace Foodishop
     {
 
         MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
+        //string myConnectionString;
         static string host = "mysql.stackcp.com";
         static string database = "wwwfoodisimotech_db-373145fd";
         static string userDB = "wwwfoodisimotech_db-373145fd";

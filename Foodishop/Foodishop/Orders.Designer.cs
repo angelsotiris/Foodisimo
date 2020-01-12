@@ -31,25 +31,29 @@
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this._wwwfoodisimotech_db_373145fdDataSet = new Foodishop._wwwfoodisimotech_db_373145fdDataSet();
-            this.wwwfoodisimotechdb373145fdDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new Foodishop._wwwfoodisimotech_db_373145fdDataSetTableAdapters.ordersTableAdapter();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wwwfoodisimotechdb373145fdDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._wwwfoodisimotech_db_373145fdDataSet = new Foodishop._wwwfoodisimotech_db_373145fdDataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ordersTableAdapter = new Foodishop._wwwfoodisimotech_db_373145fdDataSetTableAdapters.ordersTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._wwwfoodisimotech_db_373145fdDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wwwfoodisimotechdb373145fdDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wwwfoodisimotechdb373145fdDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._wwwfoodisimotech_db_373145fdDataSet)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -91,41 +95,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1030, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 24);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Αναζήτηση";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(797, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // _wwwfoodisimotech_db_373145fdDataSet
-            // 
-            this._wwwfoodisimotech_db_373145fdDataSet.DataSetName = "_wwwfoodisimotech_db_373145fdDataSet";
-            this._wwwfoodisimotech_db_373145fdDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wwwfoodisimotechdb373145fdDataSetBindingSource
-            // 
-            this.wwwfoodisimotechdb373145fdDataSetBindingSource.DataSource = this._wwwfoodisimotech_db_373145fdDataSet;
-            this.wwwfoodisimotechdb373145fdDataSetBindingSource.Position = 0;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "orders";
-            this.ordersBindingSource.DataSource = this.wwwfoodisimotechdb373145fdDataSetBindingSource;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "id";
@@ -143,6 +112,14 @@
             this.date.Name = "date";
             this.date.ToolTipText = "Ημερομηνία";
             this.date.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Κατάσταση";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerName
             // 
@@ -171,14 +148,7 @@
             this.total.HeaderText = "Σύνολο";
             this.total.MinimumWidth = 6;
             this.total.Name = "total";
-            // 
-            // useridDataGridViewTextBoxColumn
-            // 
-            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
-            this.useridDataGridViewTextBoxColumn.HeaderText = "user_id";
-            this.useridDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
-            this.useridDataGridViewTextBoxColumn.Width = 125;
+            this.total.Width = 125;
             // 
             // notesDataGridViewTextBoxColumn
             // 
@@ -188,28 +158,92 @@
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
             this.notesDataGridViewTextBoxColumn.Width = 300;
             // 
-            // statusDataGridViewTextBoxColumn
+            // useridDataGridViewTextBoxColumn
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Κατάσταση";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
+            this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
+            this.useridDataGridViewTextBoxColumn.HeaderText = "user_id";
+            this.useridDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.useridDataGridViewTextBoxColumn.Name = "useridDataGridViewTextBoxColumn";
+            this.useridDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "orders";
+            this.ordersBindingSource.DataSource = this.wwwfoodisimotechdb373145fdDataSetBindingSource;
+            // 
+            // wwwfoodisimotechdb373145fdDataSetBindingSource
+            // 
+            this.wwwfoodisimotechdb373145fdDataSetBindingSource.DataSource = this._wwwfoodisimotech_db_373145fdDataSet;
+            this.wwwfoodisimotechdb373145fdDataSetBindingSource.Position = 0;
+            // 
+            // _wwwfoodisimotech_db_373145fdDataSet
+            // 
+            this._wwwfoodisimotech_db_373145fdDataSet.DataSetName = "_wwwfoodisimotech_db_373145fdDataSet";
+            this._wwwfoodisimotech_db_373145fdDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1030, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Αναζήτηση";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(797, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(227, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1530, 27);
+            this.fillByToolStrip.TabIndex = 5;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(68, 28);
+            this.fillByToolStripButton.Text = "Έλεγχος";
+            this.fillByToolStripButton.ToolTipText = "Έλεγχος για νέες παραγγελίες";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Orders";
-            this.Size = new System.Drawing.Size(1530, 613);
+            this.Size = new System.Drawing.Size(1530, 618);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._wwwfoodisimotech_db_373145fdDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wwwfoodisimotechdb373145fdDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wwwfoodisimotechdb373145fdDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._wwwfoodisimotech_db_373145fdDataSet)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +268,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn useridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }

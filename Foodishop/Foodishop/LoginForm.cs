@@ -14,9 +14,14 @@ namespace Foodishop
     public partial class LoginForm : Form
     {
 
-        public static string email = "";
-        public static string password = "";
+        private string email = "";
+        private string password = "";
+        private string id;
+        private string sname;
+        private string phone;
         private ConnectionDB con = new ConnectionDB();
+
+        public static Shop katastima = new Shop();
 
         public LoginForm()
         {
@@ -51,40 +56,40 @@ namespace Foodishop
                 try
                 {
                     con.Open();
-                    string query = "select count(id) as count from shops WHERE email ='" + email + "' AND password ='" + password + "'";
+                    string query = "select * from shops WHERE email ='" + email + "' AND password ='" + password + "'";
                     MySqlDataReader row;
                     row = con.ExecuteReader(query);
 
-                    if (row.HasRows)
+                    if ( row.HasRows )
                     {
-                        string results = "";
-                        while ( row.Read() )
-                        {
-                            results = row["count"].ToString();
-                        }
+                        row.Read();
 
-                        if ( results == "1" )
-                        {
-                            // SUCCESS!!
-                            LoadingForm loadingForm = new LoadingForm();
-                            this.Hide();
-                            loadingForm.Closed += (s, args) => this.Close();
-                            loadingForm.Show();
-                        }
-                    }
-                    else
-                    {
-                        // if there are connection errors
-                        if (errorLabel.Visible)
-                        {
-                            blink(errorLabel);
-                        }
-                        errorLabel.Visible = true;
+                        id = row["id"].ToString();
+                        sname = row["shop_name"].ToString();
+                        phone = row["phone"].ToString();
+
+                        katastima.ShopID = id;
+                        katastima.ShopName = sname;
+                        katastima.Password = password;
+                        katastima.ShopEmail = email;
+                        katastima.Phone = phone;
+
+                        // SUCCESS!!
+                        LoadingForm loadingForm = new LoadingForm();
+                        this.Hide();
+                        loadingForm.Closed += (s, args) => this.Close();
+                        loadingForm.Show();
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Δημιουργήθηκε ένα απρόσμενο σφάλμα κατά τη σύνδεση σας.", "Σφάλμα");
+                    //MessageBox.Show("Δημιουργήθηκε ένα απρόσμενο σφάλμα κατά τη σύνδεση σας.", "Σφάλμα");
+                    // if there are connection errors
+                    if (errorLabel.Visible)
+                    {
+                        blink(errorLabel);
+                    }
+                    errorLabel.Visible = true;
                 }
             }
             

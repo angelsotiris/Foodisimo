@@ -14,47 +14,17 @@ namespace Foodishop
 {
     public partial class MainForm : Form
     {
-        private ConnectionDB con = new ConnectionDB();
 
         public MainForm()
         {
             InitializeComponent();
             topBar.Width = backgroundPanel.Width;
-            dashboard1.BringToFront();
+            dashboard2.BringToFront();
             panelActive.Height = btnDashboard.Height;
             panelActive.Top = btnDashboard.Top;
-            shopName.Text = LoginForm.email;
-            setConnectionDB();
+            shopName.Text = LoginForm.katastima.ShopName;
         }
 
-        private void setConnectionDB()
-        {
-            try
-            {
-                con.Open();
-                string query = "select * from shops WHERE email ='" + LoginForm.email + "' AND password ='" + LoginForm.password + "'";
-                MySqlDataReader rows;
-                rows = con.ExecuteReader(query);
-
-                if (rows.HasRows)
-                {
-                    Dictionary<string, string> results = new Dictionary<string, string> { };
-                    int i = 0;
-
-                    while (rows.Read())
-                    {
-                        results["shop_name"] = rows["shop_name"].ToString();
-                        results["phone"] = rows["phone"].ToString();
-                    }
-
-                    shopName.Text = results["shop_name"] ;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Δημιουργήθηκε ένα απρόσμενο σφάλμα κατά τη σύνδεση σας.", "Σφάλμα");
-            }
-        }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -78,7 +48,7 @@ namespace Foodishop
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            dashboard1.BringToFront();
+            dashboard2.BringToFront();
             panelActive.Height = btnDashboard.Height;
             panelActive.Top = btnDashboard.Top;
         }
@@ -92,6 +62,7 @@ namespace Foodishop
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
+            statistics1.BringToFront();
             panelActive.Height = btnStatistics.Height;
             panelActive.Top = btnStatistics.Top;
         }
@@ -108,6 +79,11 @@ namespace Foodishop
             orders1.BringToFront();
             panelActive.Height = btnOrders.Height;
             panelActive.Top = btnOrders.Top;
+        }
+
+        private void dashboard2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
