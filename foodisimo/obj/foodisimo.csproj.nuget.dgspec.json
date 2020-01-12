@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj": {}
+    "C:\\Users\\katerina\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj": {
+    "C:\\Users\\katerina\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
+        "projectUniqueName": "C:\\Users\\katerina\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
         "projectName": "foodisimo",
-        "projectPath": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
-        "packagesPath": "C:\\Users\\Sotiris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sotiris\\Documents\\GitHub\\Foodisimo\\foodisimo\\obj\\",
+        "projectPath": "C:\\Users\\katerina\\Documents\\GitHub\\Foodisimo\\foodisimo\\foodisimo.csproj",
+        "packagesPath": "C:\\Users\\katerina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\katerina\\Documents\\GitHub\\Foodisimo\\foodisimo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Sotiris\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\katerina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
