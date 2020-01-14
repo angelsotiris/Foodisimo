@@ -61,7 +61,7 @@ namespace API.Controllers
         public List<Shop> GetShopsById(int id)
         {
             FoodisimoContext context = HttpContext.RequestServices.GetService(typeof(API.Models.FoodisimoContext)) as FoodisimoContext;
-            return new List<Shop>();//context.GetShopsByAreaId(id);
+            return new List<Shop>();
         }
 
     }

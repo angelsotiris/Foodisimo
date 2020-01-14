@@ -1,0 +1,528 @@
+.shops-search{
+    margin-top: -25px;
+    padding-bottom: 1.75rem!important;
+    background-color: #f7f7f7!important;
+}
+.shops-search-container{
+    max-width: 960px;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.shops-search-container-row{
+    width: 100%;
+}
+.shops-search-top{
+    background-color: #fff;
+    height: 56px;
+    z-index: 1;
+    top: 8px;
+    margin-bottom: 2.5rem!important;
+    position: sticky;
+}
+.shops-search-top-container{
+    padding-left: 1.5rem!important;
+    padding-right: .5rem!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    height: 100%!important;
+    align-items: center!important;
+    justify-content: space-between!important;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #dfdfdf;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    background-color: #fff;
+    box-shadow:  inset 0 -1px 0 0 #dfdfdf, 0 2px 4px 0 rgba(0,0,0,.13);
+}
+.shops-search-top-container-search{
+    padding-right: 1rem!important;
+    padding-left: 0!important;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+.shops-search-top-container-search form div{
+    width: 100%!important;
+    position: relative!important;
+    justify-content: flex-end!important;
+    align-items: center!important;
+    display: flex!important;
+}
+.shops-search-top-container-search form div input{
+    color: #9b9b9b;
+    padding-bottom: .75rem!important;
+    padding-top: .75rem!important;
+    padding-left: 0.5rem!important;
+    border: 0!important;
+    background-color: transparent!important;
+    width: 100%;
+    height: calc(2.40875rem + 2px);
+    padding: .57rem 1rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    background-clip: padding-box;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline-offset: -2px;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.shops-search-top-container-filter{
+    padding-left: .5rem!important;
+    padding-right: 0!important;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    position: relative;
+    min-height: 1px;
+}
+.shops-search-top-container-filter div{
+    height: 100%;
+    width:  100%;
+    display: flex;
+}
+.shops-search-top-container-filter div button{
+    cursor: pointer;
+    color: grey!important;
+    margin-bottom: auto!important;
+    margin-top: auto!important;
+    padding-right: 0!important;
+    padding-left: 0!important;
+    align-items: center!important;
+    display: flex!important;
+    background-color: transparent;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .57rem 1.5rem;
+    font-size: .875rem;
+    line-height: 1.45;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-transform: none;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+}
+.filter-icon{
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #333;
+    text-align: left;
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url("../images/filter.svg");
+    margin-right: .25rem;
+}
+.shops-search-top-container-filter div button span:nth-child(2){
+    cursor: pointer;
+    color: grey!important;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    font-size: .875rem;
+    line-height: 1.45;
+    user-select: none;
+}
+.shops-search-top-container-filter-menu{
+    width: 370px !important;
+    height: auto!important;
+    max-height: 450px !important;
+    overflow-y: scroll;
+    right: -1.5rem;
+    top: 65px;
+    z-index: 1031;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.13);
+    padding-left: 2.25rem!important;
+    padding-right: 2.25rem!important;
+    padding-bottom: 2rem!important;
+    padding-top: 2rem!important;
+    position: absolute!important;
+    border-radius: .25rem!important;
+    background-color: #fff!important;
+}
+.shops-search-top-container-filter-menu::-webkit-scrollbar {
+    width: 3rem;
+    height: 2em
+}
+.shops-search-top-container-filter-menu::before{
+    content: "";
+    width: 0;
+    height: 0;
+    top: -10px;
+    right: 1rem;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+.shops-search-top-container-filter-menu h5{
+    text-transform: uppercase!important;
+    margin-bottom: 1.25rem!important;
+    font-size: .65625rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    margin-top: 0;
+}
+.filter-checkbox{
+    margin-bottom: 2rem!important;
+    padding-left: 0;
+    list-style: none;
+    margin-top: 0;
+}
+.filter-checkbox li{
+    margin-bottom: .5rem!important;
+}
+.filter-checkbox div{
+    margin-bottom:1.5rem!important;
+    position: relative!important;
+    display: block!important;
+    width: auto !important;
+    height: auto !important;
+}
+.filter-checkbox div input{
+    top:2px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    box-sizing: border-box;
+    padding: 0;
+    color: #333;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.filter-checked{
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    padding-left: 2.25rem!important;
+    padding-right: 1rem!important;
+    margin-bottom: 0!important;
+    width: 100%!important;
+    font-size: .75rem;
+    display: inline-block;
+}
+.filter-checked::before{
+    top: 1px;
+    left: 0;
+    background: #ed2e2e;
+    border-color: #ed2e2e;
+    border-radius: .25rem;
+    width: 17px;
+    height: 17px;
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid #dadada;
+    transition: all .1s ease-in-out;
+}
+.filter-checked div{
+    align-items: center!important;
+    display: flex!important;
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    font-size: .75rem;
+    padding-bottom: 0 !important;
+    margin-bottom: 0!important;
+}
+.filter-checked div span{
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    font-size: .75rem;
+}
+.filter-checked::after{
+    top: 1px;
+    left: 5px;
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+    transition: all .1s ease-in-out;
+    width: 7px;
+    height: 12px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+.filter-unchecked{
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    padding-left: 2.25rem!important;
+    padding-right: 1rem!important;
+    margin-bottom: 0!important;
+    width: 100%!important;
+    font-size: .75rem;
+    display: inline-block;
+}
+.filter-unchecked::before{
+    top: 1px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #dadada;
+    border-radius: .25rem;
+    width: 17px;
+    height: 17px;
+    content: "";
+    position: absolute;
+    display: block;
+    transition: all .1s ease-in-out;
+}
+.filter-unchecked div{
+    align-items: center!important;
+    display: flex!important;
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    font-size: .75rem;
+    padding-bottom: 0 !important;
+    margin-bottom: 0!important;
+}
+.filter-unchecked div span{
+    color: #666!important;
+    cursor: pointer;
+    font-weight: 400!important;
+    font-size: .75rem;
+}
+.filter-unchecked::after{
+    top: 1px;
+    left: 5px;
+    width: 7px;
+    height: 12px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: all .2s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    opacity: 0;
+    z-index: 1;
+}
+.shops-search-shops{
+    border-top: 1px solid #dfdfdf;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    box-shadow:  inset 0 -1px 0 0 #dfdfdf, 0 2px 4px 0 rgba(0,0,0,.13);
+    position: relative!important;
+}
+.shops-search-shops-container{
+    padding: 1.5rem!important;
+    position: relative!important;
+    display: flex!important;
+}
+.shops-search-shops-icon{
+    display: flex;
+    flex: 0 0 auto;
+    background: #ebebeb;
+    border: 1px solid #dfdfdf;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    margin-right: 1.25rem!important;
+    position: relative!important;
+    align-self: center!important;
+}
+.shops-search-shops-icon img{
+    opacity: 1;
+    transition: opacity .2s ease-in;
+    display: inline-block!important;
+    border-radius: 50%!important;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+.shops-search-shops-info{
+    padding-right: .5rem!important;
+    padding-left: 0!important;
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+.shops-search-shops-info h3{
+    margin-bottom: .5rem!important;
+    position: relative!important;
+    display: flex!important;
+    font-size: 1.00625rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    margin-top: 0;
+}
+.shops-search-shops-info small{
+    color: grey!important;
+    margin-bottom: 1.5rem!important;
+    display: block!important;
+    font-size: 86%;
+    font-weight: 400;
+}
+.shops-search-shops-info small span:nth-child(1){
+    color: grey!important;
+    margin-right: 1rem!important;
+}
+.shops-search-shops-info small span:nth-child(2){
+    color: grey!important;
+}
+.shops-search-shops-info2{
+    margin-top:0.1rem;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    justify-content: space-between!important;
+    flex-direction: column!important;
+    display: flex!important;
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+.shops-search-shops-info2-xronos{
+    display: flex!important;
+}
+.shops-search-shops-info2-xronos div{
+    margin-right: 1.5rem!important;
+}
+.shops-search-shops-info2-xronos div div{
+    margin-right: 0!important;
+    font-weight: 700!important;
+    text-transform: uppercase!important;
+    margin-bottom: .5rem!important;
+    font-size: .65625rem;
+    font-family: inherit;
+    line-height: 1.2;
+    color: inherit;
+}
+.shops-search-shops-info2-xronos div span{
+    color: grey!important;
+    font-weight: 100!important;
+    font-size: 1.25125rem;
+    margin-bottom: .25rem;
+    font-family: inherit;
+    line-height: 1.2;
+}
+.shops-search-shops-info2-katigories small{
+    color: grey!important;
+    font-size: 86%;
+    font-weight: 400;
+}
+.shops-search-shops-button{
+    margin-left: auto!important;
+    flex-direction: column!important;
+    display: flex!important;
+}
+.shops-search-shops-button div{
+    margin-left: auto!important;
+    margin-bottom: auto!important;
+    margin-top: auto!important;
+    margin-right: 0!important;
+    display: flex!important;
+} 
+.shops-search-shops-button div a{
+    cursor: pointer;
+    font-size: .875rem;
+    padding: .782rem 1.5rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #212529;
+    background-color: #ffc200;
+    border-color: #ffc200;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+@media (max-width: 990px){
+    .shops-search-container{
+        max-width: 760px !important;
+    }
+}
+@media (max-width: 797px){
+    .shops-search-container{
+        max-width: 580px !important;
+    }
+}
+@media (max-width: 710px){
+    .shops-search-container{
+        max-width: 525px !important;
+    }
+    .shops-search-shops-button div a{
+        padding: 0.2rem 0.2rem;
+        font-size: .7rem;
+    }
+    .shops-search-shops-container{
+        padding: 1.5rem;
+        padding-right:0.5rem !important;
+        padding-left:0.5rem !important;
+    }
+    .shops-search-shops-icon{
+        width: 45px;
+        height: 45px;
+    }
+    .shops-search-shops-info h3{
+        font-size: 0.7rem;
+    }
+    .shops-search-shops-info small{
+        font-size: 65%;
+    }
+    .shops-search-shops-info2-xronos div div{
+        font-size: .5rem;
+    }
+    .shops-search-shops-info2-xronos div span{
+        font-size: 0.8rem;
+    }
+    .shops-search-shops-info2-katigories small{
+        font-size: 55%;
+    }
+    .shops-search-top-container-filter div button span:nth-child(2){
+        font-size: .6rem;
+    }
+    .shops-search-top-container-search form div input{
+        font-size: .65rem;
+    }
+    .shops-search-top-container-filter-menu{
+        width: 100vw !important;
+        height: auto!important;
+        max-height: 450px !important;
+        right: none;
+        top: 65px;
+    }
+}
+

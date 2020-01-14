@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 
 namespace API.Models
 {
@@ -72,7 +74,6 @@ namespace API.Models
                             Email = reader["email"].ToString(),
                             Phone = reader["phone"].ToString(),
                             DoorbellName = reader["doorbell_name"].ToString(),
-                            DateOfBirth = DateTime.Parse(reader["date_of_birth"].ToString()),
                             Address = GetUserAddress(Convert.ToInt32(reader["id"]))
                         });
                     }
@@ -143,27 +144,46 @@ namespace API.Models
             }
 
         }
-
-        public User InsertUser(User user)
+        public int AssignAddress(string addressTitle)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(
-                    String.Format("insert into users (`id`, `name`, `surname`, `password`, `email`, `phone`, `doorbell_name`, " +
-                                  "`date_of_birth`, `created_at`, `update_at`, `last_login`)" +
-                                  "values ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', now(), now(), now())",
-                                  user.Id, user.Name, user.SurName, user.Password, user.Email, user.Phone, user.DoorbellName, user.DateOfBirth), conn);
+                    String.Format("insert into addresses (`address`, `area_id`, `floor`) values ('{0}', 1, 1)", addressTitle), conn);
 
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand(
+                    String.Format("SELECT id FROM addresses ORDER BY id DESC LIMIT 1; "), conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        return user;
+                        return Convert.ToInt32(reader["id"]);
                     }
-                    return new User();
-
                 }
+            }
+            return 0;
+        }
+
+        public User InsertUser(User user)
+        {
+            int addressId = AssignAddress(user.AddressTitle);
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(
+                    String.Format("insert into users (`name`, `surname`, `password`, `email`, `phone`, `doorbell_name`, " +
+                                  "`date_of_birth`, `created_at`, `update_at`, `last_login`, `address_id`)" +
+                                  "values ('{0}', '{1}', '{2}', '{3}', '', '{4}', '', now(), now(), now(), {5})",
+                                  user.Name, user.SurName, user.Password, user.Email, user.DateOfBirth, addressId), conn);
+
+                int reader = cmd.ExecuteNonQuery();
+                if (reader > 0)
+                {
+                    return user;
+                }
+                return new User();
             }
 
         }
@@ -203,7 +223,8 @@ namespace API.Models
                 {
                     if (reader.Read())
                     {
-                        return new User { 
+                        return new User
+                        {
                             Id = Convert.ToInt32(reader["id"]),
                             Name = reader["name"].ToString(),
                             SurName = reader["surname"].ToString(),
@@ -211,7 +232,6 @@ namespace API.Models
                             Email = reader["email"].ToString(),
                             Phone = reader["phone"].ToString(),
                             DoorbellName = reader["doorbell_name"].ToString(),
-                            DateOfBirth = DateTime.Parse(reader["date_of_birth"].ToString()),
                             Address = GetUserAddress(Convert.ToInt32(reader["id"]))
 
                         };
@@ -231,7 +251,7 @@ namespace API.Models
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(String.Format("select s.id, s.shop_name, addr.address, s.distance, s.min_order, s.delivery_time, s.description " +
-                                                                      " from shops as s " + 
+                                                                      " from shops as s " +
                                                                       " join addresses as addr " +
                                                                       " on addr.id = s.address_id"), conn);
 
@@ -267,24 +287,24 @@ namespace API.Models
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(String.Format(
-                    "select c.* from shops as s "+
-                    "join shop_categories as sc "+
-                    "on s.id = sc.shop_id "+
+                    "select c.* from shops as s " +
+                    "join shop_categories as sc " +
+                    "on s.id = sc.shop_id " +
                     "join categories as c " +
                     "on c.id = sc.category_id " +
                     "where s.id = {0}", shop_id), conn);
-                
-                
+
+
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new Category 
+                        list.Add(new Category
                         {
                             Id = Convert.ToInt32(reader["id"]),
-                            Name = reader["name"].ToString() 
+                            Name = reader["name"].ToString()
                         });
-                    }                    
+                    }
                 }
                 return list;
             }
@@ -318,14 +338,12 @@ namespace API.Models
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(String.Format(
-                    "select p.*, c.name as category from shops as s " +
-                    "join products as p " +
-                    "on p.shop_id = s.id " +
-                    "join product_categories as pc " +
+                    "select p.*, c.name as category from products as p  " +
+                    "join product_categories as pc  " +
                     "on pc.product_id = p.id " +
                     "join categories as c " +
-                    "on c.id = p.id " +
-                    "where s.id = {0}", shop_id), conn);
+                    "on c.id = pc.category_id " +
+                    "where p.shop_id = {0}", shop_id), conn);
 
 
                 using (var reader = cmd.ExecuteReader())
@@ -347,7 +365,7 @@ namespace API.Models
             }
         }
 
-       
+
         public Shop GetShop(int id)
         {
 
@@ -382,80 +400,150 @@ namespace API.Models
 
             }
         }
-        /*
-       public List<Shop> GetShopsByAreaId(int id)
-       {
-           List<Shop> list = new List<Shop>();
 
-           using (MySqlConnection conn = GetConnection())
-           {
-               conn.Open();
-               MySqlCommand cmd = new MySqlCommand(String.Format("select s.* from shops as s " +
-                                                   "join addresses as ad " +
-                                                   "on s.address_id = ad.id " +
-                                                   "join areas as ar " +
-                                                   "on ar.id = ad.area_id " +
-                                                   "where s.address_id = {0}", id), conn);
+        public bool AcceptOrder(Order order)
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
 
-               using (var reader = cmd.ExecuteReader())
-               {
-                   while (reader.Read())
-                   {
-                       list.Add(new Shop()
-                       {
-                           Id = Convert.ToInt32(reader["id"]),
-                           Name = reader["shop_name"].ToString(),
-                          // Password = reader["password"].ToString(),
-                         //  Email = reader["email"].ToString(),
-                        //   Phone = reader["phone"].ToString(),
-                        //   AddressId = Convert.ToInt32(reader["address_id"]),
-                        //   HeadUserId = Convert.ToInt32(reader["head_user_id"]),
-                        //   CreatedAt = DateTime.Parse(reader["created_at"].ToString()),
-                       //    UpdatedAt = DateTime.Parse(reader["update_at"].ToString()),
-                       //    LastLogin = DateTime.Parse(reader["last_login"].ToString())
-                       });
-                   }
-               }
-           }
-           return list;
-       }
+            {
+                using (MySqlConnection conn = GetConnection())
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(String.Format(
+                        "insert into orders (`user_id`, `status`, `notes`, " +
+                        "`total`, `created_at`, `updated_at`, `shop_id`) " +
+                        "values({0}, 'sent', '{1}', {2}, now(), now(), {3})",
+                        order.UserId, order.Notes, order.Total,
+                        order.ShopId), conn);
+                    int reader = cmd.ExecuteNonQuery();
+                    if (reader != 0)
+                    {
+                        int lastId = GetLastId();
+                        PutOrderItems(lastId, order.OrderItems);
+                        return true;
+                    }
+                }
+                return false;
 
-       public List<Shop> GetShopProducts(int id)
-       {
-           List<Shop> list = new List<Shop>();
+            }
+        }
 
-           using (MySqlConnection conn = GetConnection())
-           {
-               conn.Open();
-               MySqlCommand cmd = new MySqlCommand(String.Format("select s.* from shops as s " +
-                                                   "join addresses as ad " +
-                                                   "on s.address_id = ad.id " +
-                                                   "join areas as ar " +
-                                                   "on ar.id = ad.area_id " +
-                                                   "where s.address_id = {0}", id), conn);
+        public void PutOrderItems(int? order_id, List<OrderItem> orderItems)
+        {
+            {
+                using (MySqlConnection conn = GetConnection())
+                {
+                    conn.Open();
 
-               using (var reader = cmd.ExecuteReader())
-               {
-                   while (reader.Read())
-                   {
-                       list.Add(new Shop()
-                       {
-                           Id = Convert.ToInt32(reader["id"]),
-                           Name = reader["shop_name"].ToString(),
-                           Password = reader["password"].ToString(),
-                           Email = reader["email"].ToString(),
-                           Phone = reader["phone"].ToString(),
-                           AddressId = Convert.ToInt32(reader["address_id"]),
-                           HeadUserId = Convert.ToInt32(reader["head_user_id"]),
-                           CreatedAt = DateTime.Parse(reader["created_at"].ToString()),
-                           UpdatedAt = DateTime.Parse(reader["update_at"].ToString()),
-                           LastLogin = DateTime.Parse(reader["last_login"].ToString())
-                       });
-                   }
-               }
-           }
-           return list;
-       }*/
+                    foreach (OrderItem orderItem in orderItems)
+                    {
+                        int productId = GetProductId(orderItem.ProductName);
+                        MySqlCommand cmd = new MySqlCommand(String.Format(
+                            "insert into order_items (`order_id`, `product_id`, `quantity`, `notes`) " +
+                            "values ({0}, {1}, {2}, '')",
+                           order_id, productId, orderItem.Quantity), conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+            }
+        }
+
+        public int GetProductId(string product_name)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(String.Format(
+                        "select id from products where name='{0}'", product_name), conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return Convert.ToInt32(reader["id"]);
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public int GetLastId()
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(String.Format("SELECT id FROM orders ORDER BY id DESC LIMIT 1;"), conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return Convert.ToInt32(reader["id"]);
+                    }
+                }
+            }
+            return -1;
+        }
+
+
+        public List<Order> GetUserOrders(int userId)
+        {
+            List<Order> orders = new List<Order>();
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(String.Format(
+                    "select o.shop_id, o.id, o.created_at, s.shop_name, o.total from orders o "+
+                    "join shops s "+
+                    "on o.shop_id = s.id "+
+                    "where o.user_id = {0}", userId), conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        orders.Add(new Order()
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            CreatedAt = reader["created_at"].ToString(),
+                            ShopName = reader["shop_name"].ToString(),
+                            ShopId = Convert.ToInt32(reader["shop_id"]),
+                            Total = Convert.ToDouble(reader["total"]),
+                            OrderItems = GetOrderItems(Convert.ToInt32(reader["id"]))
+                        });
+                    }
+                }
+            }
+            return orders;
+        }
+
+        public List<OrderItem> GetOrderItems(int orderId)
+        {
+            List<OrderItem> items = new List<OrderItem>();
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(String.Format(
+                    "select p.id, p.name, oi.quantity from order_items oi " +
+                    "join products as p on p.id = oi.product_id " +
+                    "where oi.order_id = {0}", orderId), conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        items.Add(new OrderItem()
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            ProductName = reader["name"].ToString(),
+                            Quantity = Convert.ToInt32(reader["quantity"]),
+                        });
+                    }
+                }
+            }
+            return items;
+        }
     }
 
 }

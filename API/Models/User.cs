@@ -10,7 +10,7 @@ namespace API.Models
 
         public User(int id, string name, string surname, string password, string email,
             string phone, string doorbell_name, DateTime date_of_birth, Address address,
-            DateTime created_at, DateTime update_at, DateTime last_login)
+            DateTime created_at, DateTime update_at, DateTime last_login, string addressTitle)
         {
             Id = id;
             Name = name;
@@ -24,7 +24,7 @@ namespace API.Models
             CreatedAt = created_at;
             UpdatedAt = update_at;
             LastLogin = last_login;
-
+            AddressTitle = addressTitle;
         }
 
         public int? Id { get; set; }
@@ -35,6 +35,7 @@ namespace API.Models
         public string? Phone { get; set; }
         public string? DoorbellName { get; set; }
         public DateTime? DateOfBirth { get; set; }
+        public string? AddressTitle { get; set; }
         public Address? Address { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
